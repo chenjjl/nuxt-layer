@@ -44,7 +44,7 @@ function onSelect(index: number) {
       :style="height ? 'height: 100vh;object-fit: cover;' : ''"
       class="w-full"
     >
-    <div class="arrows">
+    <div v-if="imgs.length > 1" class="arrows">
       <div class="chevron">
         <UIcon
           name="i-lucide-chevron-left"
