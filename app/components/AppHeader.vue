@@ -41,7 +41,7 @@ onMounted(() => {
     <template #left>
       <NuxtLink to="/">
         <AppLogo
-          class="w-auto h-6 shrink-0"
+          class="w-auto h-16 shrink-0"
           :class="{ 'text-white': !isScrolled }"
           :image="image"
         />
@@ -80,8 +80,9 @@ onMounted(() => {
       <template #left>
         <NuxtLink to="/">
           <AppLogo
-            class="w-auto h-6 shrink-0"
+            class="w-auto h-16 shrink-0"
             :class="{ 'text-white': !isScrolled }"
+            :image="image"
           />
         </NuxtLink>
       </template>
