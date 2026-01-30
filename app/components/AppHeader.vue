@@ -2,7 +2,8 @@
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
 defineProps<{
-  image: string
+  imageWhite: string
+  imageBlack: string
 }>()
 
 const { data: page } = await useAsyncData('index', () => queryCollection('index').first())
@@ -43,7 +44,7 @@ onMounted(() => {
         <AppLogo
           class="w-auto h-16 shrink-0"
           :class="{ 'text-white': !isScrolled }"
-          :image="image"
+          :image="isScrolled ? imageBlack : imageWhite"
         />
       </NuxtLink>
     </template>
@@ -82,7 +83,7 @@ onMounted(() => {
           <AppLogo
             class="w-auto h-16 shrink-0"
             :class="{ 'text-white': !isScrolled }"
-            :image="image"
+            :image="isScrolled ? imageBlack : imageWhite"
           />
         </NuxtLink>
       </template>
