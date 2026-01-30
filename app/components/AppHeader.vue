@@ -37,6 +37,10 @@ onMounted(() => {
       boxShadow: 'none',
       backdropFilter: 'blur(0)'
     }"
+    :toggle="{
+      color: 'white',
+      size: 'xl'
+    }"
     :blur="false"
   >
     <template #left>
@@ -49,14 +53,14 @@ onMounted(() => {
       </NuxtLink>
     </template>
 
-    <template #default>
+    <template #right>
       <UNavigationMenu
         content-orientation="vertical"
         :items="routes"
         highlight
         highlight-color="primary"
         variant="link"
-        class="w-full justify-center"
+        class="w-full justify-center hidden lg:flex"
         :ui="{
           linkLabel: isScrolled ? 'text-lg' : 'text-lg text-white-important',
           linkTrailingIcon: isScrolled ? '' : 'text-white-important',
@@ -76,6 +80,10 @@ onMounted(() => {
         boxShadow: isScrolled ? '0 1px 3px rgba(0,0,0,0.1)' : 'none',
         backdropFilter: isScrolled ? 'none' : 'blur(0)'
       }"
+      :toggle="{
+        color: 'white',
+        size: 'xl'
+      }"
       :blur="false"
     >
       <template #left>
@@ -88,14 +96,14 @@ onMounted(() => {
         </NuxtLink>
       </template>
 
-      <template #default>
+      <template #right>
         <UNavigationMenu
           content-orientation="vertical"
           :items="routes"
           highlight
           highlight-color="primary"
           variant="link"
-          class="w-full justify-center"
+          class="w-full justify-center hidden lg:flex"
           :ui="{
             linkLabel: isScrolled ? 'text-lg' : 'text-lg text-white-important',
             linkTrailingIcon: isScrolled ? '' : 'text-white-important',
@@ -109,23 +117,6 @@ onMounted(() => {
           :items="routes"
           orientation="vertical"
           class="-mx-2.5 menu"
-        />
-
-        <USeparator class="my-6" />
-
-        <UButton
-          label="Sign in"
-          color="neutral"
-          variant="subtle"
-          to="/login"
-          block
-          class="mb-3"
-        />
-        <UButton
-          label="Sign up"
-          color="neutral"
-          to="/signup"
-          block
         />
       </template>
     </UHeader>
