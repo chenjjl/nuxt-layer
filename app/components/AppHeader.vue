@@ -1,6 +1,10 @@
 <script setup lang="ts">
 import { ref, onMounted, onBeforeUnmount } from 'vue'
 
+defineProps<{
+  image: string
+}>()
+
 const { data: page } = await useAsyncData('index', () => queryCollection('index').first())
 
 const routes = page.value?.route
@@ -39,6 +43,7 @@ onMounted(() => {
         <AppLogo
           class="w-auto h-6 shrink-0"
           :class="{ 'text-white': !isScrolled }"
+          :image="image"
         />
       </NuxtLink>
     </template>

@@ -18,5 +18,8 @@
     "nuxt": "^4.3.0",
     "typescript": "^5.9.3",
     "vue": "latest"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^4.4.0"
   }
 }
