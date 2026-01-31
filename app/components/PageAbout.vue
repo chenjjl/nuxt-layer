@@ -17,7 +17,7 @@ const props = withDefaults(defineProps<{
     :links="[{
       label: '了解更多',
       variant: 'outline',
-      icon: 'i-lucide-arrow-right',
+      trailingIcon: 'i-lucide-arrow-right',
       to: props.to
     }]"
   >
