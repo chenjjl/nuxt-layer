@@ -35,8 +35,8 @@ withDefaults(defineProps<{
           v-for="(post, index) in posts"
           :key="index"
           :to="`/news/${post.id}`"
-          :description="post.from"
           v-bind="post"
+          :description="post.from"
         >
           <template #date>
             {{ post.date }}
