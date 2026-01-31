@@ -12,6 +12,9 @@ const props = withDefaults(defineProps<{
     class="w-full relative"
     auto-height
     :items="[props.image]"
+    :ui="{
+      container: 'height-modify'
+    }"
   >
     <img
       :src="props.image"
@@ -24,5 +27,8 @@ const props = withDefaults(defineProps<{
   </UCarousel>
 </template>
 
-<style scoped>
+<style>
+.height-modify {
+  height: unset !important;
+}
 </style>
