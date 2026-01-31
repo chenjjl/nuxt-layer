@@ -18,8 +18,11 @@ const routes = page.value?.route
       </UContainer>
       <div class="border-split">
         <p class="text-sm text-white-important">
-          Built with Nuxt UI • © {{ new Date().getFullYear() }}
+          {{ page.title }} • © {{ new Date().getFullYear() }}
         </p>
+        <a class="text-sm text-white-important ml-2.5 cursor-pointer" href="https://beian.miit.gov.cn/" target="_blank">
+          {{ page.info?.beian }}
+        </a>
       </div>
     </div>
   </UFooter>
