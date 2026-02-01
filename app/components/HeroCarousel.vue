@@ -8,6 +8,12 @@ defineProps<{
     title: string
     description: string
     links: ButtonProps[]
+    stats: {
+      number: string
+      unit: string
+      label: string
+      subLabel: string
+    }[]
   }[]
   height: string
 }>()
@@ -44,7 +50,10 @@ function onSelect(index: number) {
       :style="height ? 'height: 100vh;object-fit: cover;' : ''"
       class="w-full"
     >
-    <div v-if="imgs.length > 1" class="arrows">
+    <div
+      v-if="imgs.length > 1"
+      class="arrows"
+    >
       <div class="chevron">
         <UIcon
           name="i-lucide-chevron-left"
@@ -69,6 +78,11 @@ function onSelect(index: number) {
         :links="item.links"
       />
     </div>
+    <ImageStatistics
+      v-if="item.stats"
+      class="bottom"
+      :items="item.stats"
+    />
   </UCarousel>
 </template>
 
@@ -102,5 +116,11 @@ function onSelect(index: number) {
   ::v-deep .text-muted {
     color: white !important;
   }
+}
+
+.bottom {
+  position: absolute;
+  bottom: 2rem;
+  width: 100%;
 }
 </style>
