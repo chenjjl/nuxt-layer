@@ -11,7 +11,7 @@ const routes = page.value?.route
     :ui="{ center: 'w-full', left: 'self-start', right: 'self-start' }"
   >
     <template #left>
-      <div class="w-40 pt-8 flex flex-col items-start self-start">
+      <div class="w-70 lg:pt-8 flex flex-col items-start self-start">
         <AppLogo
           class="h-16 w-40"
           :image="page.info.logoWhite"
@@ -41,7 +41,7 @@ const routes = page.value?.route
       </div>
     </div>
     <template #right>
-      <div :class="'pt-10 text-white text-sm w-' + (30 * page.footerContact.qrCodes.length) + ''">
+      <div :class="'lg:pt-10 text-white text-sm w-' + (30 * page.footerContact.qrCodes.length) + ''">
         <div class="font-bold mb-2.5">
           联系方式
         </div>
@@ -92,6 +92,9 @@ const routes = page.value?.route
 @media (max-width: 768px) {
   .display-unset {
     display: none;
-}
+  }
+  .border-split {
+    padding-bottom: 0;
+  }
 }
 </style>
