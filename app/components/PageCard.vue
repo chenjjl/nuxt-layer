@@ -44,7 +44,7 @@ const card = defineProps<{
         {{ card.description }}
       </p>
 
-      <span class="inline-block rounded-full border border-white/90 px-6 py-1.5 text-sm text-white-important transition-all duration-200 hover:bg-white hover:text-[#e91e63] transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-100">
+      <span class="inline-block rounded-full border border-white/90 px-6 py-1.5 text-sm text-white transition-all duration-200 hover:bg-white hover:text-primary transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300 delay-100">
         查看详情
       </span>
     </div>
