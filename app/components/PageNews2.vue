@@ -22,10 +22,12 @@ function getImage(image: string | undefined) {
 <template>
   <div>
     <UContainer class="py-12">
-      <PageSection2
-        title="新闻动态"
-        description="了解行业最新资讯，掌握物流动态信息"
-      />
+      <slot name="title">
+        <PageSection2
+          title="新闻动态"
+          description="了解行业最新资讯，掌握物流动态信息"
+        />
+      </slot>
       <!-- 桌面端布局 -->
       <div class="hidden md:flex gap-4 mt-8">
         <!-- 左侧大卡片 -->

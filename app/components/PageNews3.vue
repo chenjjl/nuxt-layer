@@ -49,26 +49,29 @@ function getImage(image: string | undefined) {
 
         <!-- 右侧三个小卡片 -->
         <div class="w-1/2 flex flex-col gap-4">
-          <div
+          <NuxtLink
             v-for="(post, index) in posts.slice(1, 4)"
             :key="post.id || index"
-            class="group flex gap-4 bg-white hover:bg-primary p-3 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer flex-1"
+            :to="`${to}/${post.id}`"
+            class="group flex gap-4 bg-white hover:bg-gray-50 p-3 rounded-lg cursor-pointer flex-1"
           >
-            <div class="w-1/3 overflow-hidden">
+            <div class="w-[140px] h-[100px] overflow-hidden flex-shrink-0 rounded-lg">
               <img
                 :src="getImage(post?.image)"
-                class="w-full h-full object-cover transition-transform duration-300 hover:scale-115"
+                class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
               >
             </div>
-            <div class="w-2/3 flex flex-col justify-center">
-              <h2 class="text-gray-800 group-hover:text-white text-lg font-bold mb-2 line-clamp-1">
+            <div class="flex-1 flex flex-col justify-center min-w-0">
+              <span class="text-blue-600 text-xs font-medium mb-1">新闻</span>
+              <h2 class="text-gray-900 group-hover:text-blue-600 transition-colors text-base font-bold mb-2 line-clamp-1">
                 {{ post.title }}
               </h2>
-              <p class="text-gray-600 group-hover:text-white text-sm line-clamp-2">
+              <p class="text-gray-600 text-sm line-clamp-2">
                 {{ post.description }}
               </p>
+              <span v-if="post.date" class="text-gray-400 text-xs mt-2">{{ post.date }}发布</span>
             </div>
-          </div>
+          </NuxtLink>
         </div>
       </div>
 
@@ -92,26 +95,29 @@ function getImage(image: string | undefined) {
         </div>
 
         <!-- 下面三个小卡片 -->
-        <div
+        <NuxtLink
           v-for="(post, index) in posts.slice(1, 4)"
           :key="post.id || index"
-          class="flex gap-3 bg-white p-2 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer"
+          :to="`${to}/${post.id}`"
+          class="flex gap-3 bg-white p-2 rounded-lg cursor-pointer group"
         >
-          <div class="w-[100px] h-[75px] flex-shrink-0 overflow-hidden">
+          <div class="w-[100px] h-[75px] flex-shrink-0 overflow-hidden rounded-lg">
             <img
               :src="getImage(post?.image)"
-              class="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             >
           </div>
           <div class="flex-1 flex flex-col justify-center min-w-0">
-            <h2 class="text-gray-800 text-sm font-bold mb-1 line-clamp-1">
+            <span class="text-blue-600 text-xs font-medium mb-1">新闻</span>
+            <h2 class="text-gray-900 group-hover:text-blue-600 transition-colors text-sm font-bold mb-1 line-clamp-1">
               {{ post.title }}
             </h2>
             <p class="text-gray-600 text-xs line-clamp-2">
               {{ post.description }}
             </p>
+            <span v-if="post.date" class="text-gray-400 text-xs mt-1">{{ post.date }}发布</span>
           </div>
-        </div>
+        </NuxtLink>
       </div>
     </UContainer>
   </div>

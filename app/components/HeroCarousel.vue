@@ -45,11 +45,13 @@ function onSelect(index: number) {
     :items="imgs"
     @select="onSelect"
   >
-    <img
-      :src="item.src"
-      :style="height ? 'height: 100vh;object-fit: cover;' : ''"
-      class="w-full"
-    >
+    <slot name="media">
+      <img
+        :src="item.src"
+        :style="height ? 'height: 100vh;object-fit: cover;' : ''"
+        class="w-full"
+      >
+    </slot>
     <div
       v-if="imgs.length > 1"
       class="arrows"
