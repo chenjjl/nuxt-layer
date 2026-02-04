@@ -11,11 +11,13 @@ const routes = page.value?.route
     :ui="{ center: 'w-full', left: 'self-start', right: 'self-start' }"
   >
     <template #left>
-      <div class="w-70 lg:pt-8 flex flex-col items-start self-start">
-        <AppLogo
-          class="h-16 w-40"
-          :image="page.info.logoWhite"
-        />
+      <div class="w-100 lg:w-70 lg:pt-8 flex flex-col items-start self-start">
+        <div class="w-full flex justify-center lg:justify-start">
+          <AppLogo
+            class="h-16 w-40"
+            :image="page.info.logoWhite"
+          />
+        </div>
         <div class="text-white mt-2.5 text-sm">
           {{ page.description }}
         </div>

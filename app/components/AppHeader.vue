@@ -81,7 +81,7 @@ onMounted(() => {
         backdropFilter: isScrolled ? 'none' : 'blur(0)'
       }"
       :toggle="{
-        color: 'white',
+        color: isScrolled ? 'neutral' : 'white',
         size: 'xl'
       }"
       :blur="false"

@@ -39,7 +39,7 @@ function onSelect(index: number) {
     v-slot="{ item }"
     class="w-full relative hero-carousel"
     loop
-    dots
+    :dots="imgs.length > 1"
     :auto-height="!height"
     :autoplay="{ delay: 2000 }"
     :items="imgs"
