@@ -11,8 +11,6 @@ const props = withDefaults(defineProps<{
 
 <template>
   <UPageSection
-    :title="title"
-    :description="description"
     orientation="horizontal"
     :links="[{
       label: '了解更多',
@@ -21,7 +19,25 @@ const props = withDefaults(defineProps<{
       to: props.to
     }]"
   >
+    <template #title>
+      <div
+        v-motion-slide-visible-left
+        :duration="700"
+      >
+        {{ title }}
+      </div>
+    </template>
+    <template #description>
+      <div
+        v-motion-slide-visible-left
+        :duration="700"
+      >
+        {{ description }}
+      </div>
+    </template>
     <img
+      v-motion-slide-visible-right
+      :duration="700"
       :src="img"
       width="462"
       height="260"

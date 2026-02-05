@@ -78,10 +78,29 @@ function onSelect(index: number) {
         :title="item.title"
         :description="item.description"
         :links="item.links"
-      />
+      >
+        <template #title>
+          <div
+            v-motion-fade-visible
+            :duration="700"
+          >
+            {{ item.title }}
+          </div>
+        </template>
+        <template #description>
+          <div
+            v-motion-fade-visible
+            :duration="700"
+          >
+            {{ item.description }}
+          </div>
+        </template>
+      </UPageHero>
     </div>
     <ImageStatistics
       v-if="item.stats"
+      v-motion-slide-visible-bottom
+      :duration="700"
       class="bottom"
       :items="item.stats"
     />

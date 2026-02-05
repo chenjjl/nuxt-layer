@@ -11,7 +11,11 @@ const routes = page.value?.route
     :ui="{ center: 'w-full', left: 'self-start', right: 'self-start' }"
   >
     <template #left>
-      <div class="w-100 lg:w-70 lg:pt-8 flex flex-col items-start self-start">
+      <div
+        v-motion-slide-visible-left
+        :duration="700"
+        class="w-100 lg:w-70 lg:pt-8 flex flex-col items-start self-start"
+      >
         <div class="w-full flex justify-center lg:justify-start">
           <AppLogo
             class="h-16 w-40"
@@ -23,7 +27,11 @@ const routes = page.value?.route
         </div>
       </div>
     </template>
-    <div class="flex flex-col">
+    <div
+      v-motion-slide-visible-bottom
+      :duration="700"
+      class="flex flex-col"
+    >
       <UFooterColumns
         class="py-10 hidden lg:flex"
         :columns="routes"
@@ -43,7 +51,11 @@ const routes = page.value?.route
       </div>
     </div>
     <template #right>
-      <div :class="'lg:pt-10 text-white text-sm w-' + (30 * page.footerContact.qrCodes.length) + ''">
+      <div
+        v-motion-slide-visible-right
+        :duration="700"
+        :class="'lg:pt-10 text-white text-sm w-' + (30 * page.footerContact.qrCodes.length) + ''"
+      >
         <div class="font-bold mb-2.5">
           联系方式
         </div>

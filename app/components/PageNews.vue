@@ -30,7 +30,10 @@ withDefaults(defineProps<{
       />
     </template>
     <template #body>
-      <UBlogPosts>
+      <UBlogPosts
+        v-motion-slide-visible-bottom
+        :duration="700"
+      >
         <UBlogPost
           v-for="(post, index) in posts"
           :key="index"
