@@ -39,7 +39,11 @@ function setActiveIndex(index: number) {
       </slot>
 
       <!-- 内容区 -->
-      <div class="min-h-[280px] flex items-start">
+      <div
+        v-motion-slide-visible-left
+        :duration="700"
+        class="min-h-[280px] flex items-start"
+      >
         <div class="max-w-xl">
           <h3 class="text-white text-3xl font-bold mb-4">
             {{ activeAdvantage?.title }}
@@ -51,7 +55,11 @@ function setActiveIndex(index: number) {
       </div>
 
       <!-- 底部图标卡片 -->
-      <div class="mt-12">
+      <div
+        v-motion-slide-visible-right
+        :duration="700"
+        class="mt-12"
+      >
         <div class="flex flex-wrap justify-center gap-3">
           <button
             v-for="(item, index) in advantages"

@@ -31,7 +31,11 @@ function getImage(image: string | undefined) {
       <!-- 桌面端布局 -->
       <div class="hidden md:flex gap-4 mt-8">
         <!-- 左侧大卡片 -->
-        <div class="w-1/2 relative overflow-hidden group cursor-pointer">
+        <div
+          v-motion-slide-visible-left
+          :duration="700"
+          class="w-1/2 relative overflow-hidden group cursor-pointer"
+        >
           <div
             class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-115"
             :style="{ backgroundImage: `url(${getImage(posts[0]?.image)})` }"
@@ -48,7 +52,11 @@ function getImage(image: string | undefined) {
         </div>
 
         <!-- 右侧三个小卡片 -->
-        <div class="w-1/2 flex flex-col gap-4">
+        <div
+          v-motion-slide-visible-right
+          :duration="700"
+          class="w-1/2 flex flex-col gap-4"
+        >
           <div
             v-for="(post, index) in posts.slice(1, 4)"
             :key="post.id || index"
@@ -75,7 +83,11 @@ function getImage(image: string | undefined) {
       <!-- 移动端布局 -->
       <div class="md:hidden flex flex-col gap-4 mt-8">
         <!-- 顶部大图卡片 -->
-        <div class="relative overflow-hidden group cursor-pointer">
+        <div
+          v-motion-slide-visible-right
+          :duration="700"
+          class="relative overflow-hidden group cursor-pointer"
+        >
           <div
             class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
             :style="{ backgroundImage: `url(${getImage(posts[0]?.image)})` }"
@@ -94,6 +106,8 @@ function getImage(image: string | undefined) {
         <!-- 下面三个小卡片 -->
         <div
           v-for="(post, index) in posts.slice(1, 4)"
+          v-motion-slide-visible-left
+          :duration="700"
           :key="post.id || index"
           class="flex gap-3 bg-white p-2 rounded shadow-sm hover:shadow-md transition-shadow cursor-pointer"
         >

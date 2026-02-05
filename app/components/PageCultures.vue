@@ -9,7 +9,11 @@ const props = defineProps<{
 </script>
 
 <template>
-  <UContainer class="py-12">
+  <UContainer
+    v-motion-pop-visible
+    :duration="700"
+    class="py-12"
+  >
     <slot name="title">
       <PageSection
         cn="企业文化"
@@ -18,7 +22,10 @@ const props = defineProps<{
     </slot>
 
     <!-- 桌面端：三列不规则网格布局 -->
-    <div class="hidden md:grid md:grid-cols-3 gap-5 mt-8" style="height: 420px;">
+    <div
+      class="hidden md:grid md:grid-cols-3 gap-5 mt-8"
+      style="height: 420px;"
+    >
       <!-- 左侧：大卡片（经营理念） -->
       <div class="relative overflow-hidden group h-full">
         <img

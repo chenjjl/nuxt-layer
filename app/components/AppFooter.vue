@@ -12,8 +12,6 @@ const routes = page.value?.route
   >
     <template #left>
       <div
-        v-motion-slide-visible-left
-        :duration="700"
         class="w-100 lg:w-70 lg:pt-8 flex flex-col items-start self-start"
       >
         <div class="w-full flex justify-center lg:justify-start">
@@ -28,8 +26,6 @@ const routes = page.value?.route
       </div>
     </template>
     <div
-      v-motion-slide-visible-bottom
-      :duration="700"
       class="flex flex-col"
     >
       <UFooterColumns
@@ -52,8 +48,6 @@ const routes = page.value?.route
     </div>
     <template #right>
       <div
-        v-motion-slide-visible-right
-        :duration="700"
         :class="'lg:pt-10 text-white text-sm w-' + (30 * page.footerContact.qrCodes.length) + ''"
       >
         <div class="font-bold mb-2.5">
