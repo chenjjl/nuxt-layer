@@ -31,7 +31,11 @@ function getImage(image: string | undefined) {
       <!-- 桌面端布局 -->
       <div class="hidden md:flex gap-4 mt-8">
         <!-- 左侧大卡片 -->
-        <div class="w-1/2 relative overflow-hidden group cursor-pointer">
+        <div
+          v-motion-slide-visible-left
+          :duration="700"
+          class="w-1/2 relative overflow-hidden group cursor-pointer"
+        >
           <div
             class="absolute inset-0 bg-cover bg-center transition-transform duration-300 group-hover:scale-115"
             :style="{ backgroundImage: `url(${getImage(posts[0]?.image)})` }"
@@ -48,7 +52,11 @@ function getImage(image: string | undefined) {
         </div>
 
         <!-- 右侧三个小卡片 -->
-        <div class="w-1/2 flex flex-col gap-4">
+        <div
+          v-motion-slide-visible-right
+          :duration="700"
+          class="w-1/2 flex flex-col gap-4"
+        >
           <NuxtLink
             v-for="(post, index) in posts.slice(1, 4)"
             :key="post.id || index"
@@ -69,14 +77,21 @@ function getImage(image: string | undefined) {
               <p class="text-gray-600 text-sm line-clamp-2">
                 {{ post.description }}
               </p>
-              <span v-if="post.date" class="text-gray-400 text-xs mt-2">{{ post.date }}发布</span>
+              <span
+                v-if="post.date"
+                class="text-gray-400 text-xs mt-2"
+              >{{ post.date }}发布</span>
             </div>
           </NuxtLink>
         </div>
       </div>
 
       <!-- 移动端布局 -->
-      <div class="md:hidden flex flex-col gap-4 mt-8">
+      <div
+        v-motion-slide-visible-left
+        :duration="700"
+        class="md:hidden flex flex-col gap-4 mt-8"
+      >
         <!-- 顶部大图卡片 -->
         <div class="relative overflow-hidden group cursor-pointer">
           <div
@@ -115,7 +130,10 @@ function getImage(image: string | undefined) {
             <p class="text-gray-600 text-xs line-clamp-2">
               {{ post.description }}
             </p>
-            <span v-if="post.date" class="text-gray-400 text-xs mt-1">{{ post.date }}发布</span>
+            <span
+              v-if="post.date"
+              class="text-gray-400 text-xs mt-1"
+            >{{ post.date }}发布</span>
           </div>
         </NuxtLink>
       </div>

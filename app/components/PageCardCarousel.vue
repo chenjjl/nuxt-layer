@@ -9,6 +9,8 @@ const props = defineProps<{
 <template>
   <UCarousel
     v-slot="{ item }"
+    v-motion-slide-visible-bottom
+    :duration="700"
     arrows
     loop
     dots
@@ -29,7 +31,11 @@ const props = defineProps<{
     :key="index"
     class="flex md:hidden lg:hidden"
   >
-    <div class="w-full">
+    <div
+      v-motion-slide-visible-left
+      :duration="700"
+      class="w-full"
+    >
       <slot
         name="default"
         v-bind="{ item }"

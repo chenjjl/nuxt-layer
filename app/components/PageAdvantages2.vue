@@ -16,7 +16,7 @@ const props = defineProps<{
 <template>
   <div
     class="relative bg-cover bg-center bg-no-repeat py-16 lg:py-24"
-    style="background-image: url('https://www.txfba.com/_nuxt/beij1.q02XaOI4.png');"
+    style="background-image: url('https://xuebo-1320531731.cos.ap-shanghai.myqcloud.com/2026/02/03/419a9e5151ab4b4baf15e36b6628c509/shipping-1078102_1280.jpg');"
   >
     <!-- 遮罩层 -->
     <div class="absolute inset-0 bg-[#0a1628]/80" />
@@ -24,7 +24,11 @@ const props = defineProps<{
     <UContainer class="relative z-10">
       <div class="flex flex-col lg:flex-row lg:items-start lg:gap-16">
         <!-- 左侧：标题区域 -->
-        <div class="mb-10 lg:mb-0 lg:w-1/3 lg:pt-8">
+        <div
+          v-motion-slide-visible-left
+          :duration="700"
+          class="mb-10 lg:mb-0 lg:w-1/3 lg:pt-8"
+        >
           <h2 class="mb-6 text-3xl sm:text-4xl lg:text-5xl text-pretty tracking-tight font-bold text-white">
             {{ title }}
           </h2>
@@ -44,7 +48,11 @@ const props = defineProps<{
         </div>
 
         <!-- 右侧：卡片网格 -->
-        <div class="lg:w-2/3">
+        <div
+          v-motion-slide-visible-right
+          :duration="700"
+          class="lg:w-2/3"
+        >
           <!-- PC端：2x2网格 -->
           <div class="hidden grid-cols-2 gap-6 lg:grid">
             <div
@@ -76,7 +84,11 @@ const props = defineProps<{
           </div>
 
           <!-- 移动端：垂直堆叠 -->
-          <div class="flex flex-col gap-4 lg:hidden">
+          <div
+            v-motion-slide-visible-left
+            :duration="700"
+            class="flex flex-col gap-4 lg:hidden"
+          >
             <div
               v-for="(item, index) in props.advantages"
               :key="index"

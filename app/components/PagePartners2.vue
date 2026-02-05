@@ -7,7 +7,11 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <UMarquee pause-on-hover>
+  <UMarquee
+    v-motion-slide-visible-bottom
+    :duration="700"
+    pause-on-hover
+  >
     <div
       v-for="(item, index) in logos"
       :key="index"

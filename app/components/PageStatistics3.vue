@@ -23,7 +23,7 @@ const defaultTitle = '我们的规模'
   <div
     class="relative w-full py-16 lg:py-24"
     :style="{
-      backgroundImage: 'url(https://www.txfba.com/_nuxt/bj2.DCZuZnd5.png)',
+      backgroundImage: 'url(https://xuebo-1320531731.cos.ap-shanghai.myqcloud.com/2026/02/02/74c62267b9934597bda9202536ade768/skyline-255116_1280.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center'
     }"
@@ -41,7 +41,11 @@ const defaultTitle = '我们的规模'
       </div>
 
       <!-- 统计数据 -->
-      <div class="grid grid-cols-2 gap-8 lg:grid-cols-6 lg:gap-6">
+      <div
+        v-motion-slide-visible-bottom
+        :duration="700"
+        class="grid grid-cols-2 gap-8 lg:grid-cols-6 lg:gap-6"
+      >
         <div
           v-for="(item, index) in data.items"
           :key="index"

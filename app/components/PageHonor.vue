@@ -19,7 +19,11 @@ withDefaults(defineProps<{
     :title="title"
     :description="description"
   >
-    <UMarquee pause-on-hover>
+    <UMarquee
+      v-motion-slide-visible-bottom
+      :duration="700"
+      pause-on-hover
+    >
       <HonorWrapper
         v-for="(item, index) in honors"
         :key="index"
