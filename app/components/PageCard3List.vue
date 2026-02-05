@@ -15,7 +15,11 @@ defineProps<Props>()
 
 <template>
   <!-- 桌面端：横向展开布局 -->
-  <div class="hidden md:flex md:w-full md:flex-row">
+  <div
+    v-motion-slide-visible-right
+    :duration="700"
+    class="hidden md:flex md:w-full md:flex-row"
+  >
     <PageCard3
       v-for="(item, index) in cards"
       :key="index"
@@ -28,7 +32,11 @@ defineProps<Props>()
   </div>
 
   <!-- 移动端：网格布局 -->
-  <div class="grid grid-cols-1 gap-4 md:hidden">
+  <div
+    v-motion-slide-visible-right
+    :duration="700"
+    class="grid grid-cols-1 gap-4 md:hidden"
+  >
     <NuxtLink
       v-for="(item, index) in cards"
       :key="index"

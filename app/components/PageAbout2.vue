@@ -34,13 +34,21 @@ withDefaults(defineProps<{
         </div>
       </div>
       <div class="lg:flex justify-between">
-        <div class="lg:w-1/2">
+        <div
+          v-motion-slide-visible-left
+          :duration="700"
+          class="lg:w-1/2"
+        >
           <img
             :src="image"
             class="w-full rounded-xl object-cover shadow-[0_20px_50px_rgba(0,0,0,0.5)]"
           >
         </div>
-        <div class="lg:w-1/2 text-white text-xl mt-8 lg:mt-0 lg:ml-10 font-bold">
+        <div
+          v-motion-slide-visible-right
+          :duration="700"
+          class="lg:w-1/2 text-white text-xl mt-8 lg:mt-0 lg:ml-10 font-bold"
+        >
           <p>{{ content }}</p>
           <div class="text-center lg:text-left">
             <UButton

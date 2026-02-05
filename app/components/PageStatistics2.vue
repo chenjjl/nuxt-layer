@@ -13,7 +13,11 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="page-statistics">
+  <div
+    v-motion-slide-visible-bottom
+    :duration="700"
+    class="page-statistics"
+  >
     <div
       v-for="(item, index) in items"
       :key="index"

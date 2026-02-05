@@ -7,7 +7,11 @@ withDefaults(defineProps<{
 </script>
 
 <template>
-  <div class="grid grid-cols-3 gap-4 lg:grid-cols-6 place-items-center">
+  <div
+    v-motion-slide-visible-right
+    :duration="700"
+    class="grid grid-cols-3 gap-4 lg:grid-cols-6 place-items-center"
+  >
     <div
       v-for="(item, index) in logos"
       :key="index"
