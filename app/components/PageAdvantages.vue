@@ -1,12 +1,16 @@
 <script setup lang="ts">
-const props = defineProps<{
+
+const props = withDefaults(defineProps<{
   advantages: {
     title: string
     icon: string
     image: string
     description: string
-  }[]
-}>()
+  }[],
+  title?: string
+}>(), {
+  title: '我们的优势'
+})
 
 const activeIndex = ref(0)
 
@@ -34,7 +38,7 @@ function setActiveIndex(index: number) {
       <slot name="title">
         <PageSection
           class="text-white"
-          cn="我们的优势"
+          :cn="title"
         />
       </slot>
 
