@@ -9,6 +9,7 @@ const props = defineProps<{
 
 // 将描述按换行符分割成多行
 const descriptionLines = computed(() => {
+  if (!props.description) return []
   return props.description.split(/\\n|\n/).filter(line => line.trim())
 })
 </script>
