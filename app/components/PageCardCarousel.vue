@@ -10,7 +10,7 @@ const props = defineProps<{
   <UCarousel
     v-slot="{ item }"
     v-motion-slide-visible-bottom
-    :duration="700"
+    :duration="1500"
     arrows
     loop
     dots
